@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성카드</title>
+
+<link rel="icon" href="./images/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400&display=swap" rel="stylesheet">
+
+<!--ICONS-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<!--STYLE-->
+<link rel="stylesheet" href="./style/style.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- GSAP & ScrollTopPlugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollToPlugin.min.js" integrity="sha512-G1knxg24kfj9lJ5uJPaMsZAV76b0gIi2zs1wm6hbm612BKfutHZq8h+Co4lMLNpqLNsxtbKl4BPfAu/Aw7UC1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- SWIPER -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="/script/youtube.js"></script>
+
+<!-- ScrollMagic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script defer src="./script/jquery-3.6.0.min.js"></script>
+<script defer src="./script/slide.js"></script>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+<header>
+    <a href="/" class="logo">
+      <img src="./images/common/img_logo.png" alt="삼성로고">
+    </a>
+    <ul class="main_menu clearFix">
+      <li class="item on">
+        <div class="item_name "><a href="#">My Samsung</a></div>
+        <ul class="menu_inner clearFix">
+            <li><h4>명세서</h4>
+              <ul class="sub_menu">
+                <li><a href="#">이용대금명세서</a></li>
+                <li><a href="#">카드 이용내역<br>(매출전표조회)</a></li>
+                <li><a href="#">카드이용알림서비스</a></li>
+                <li><a href="#">금융 이용내역</a></li>
+                <li><a href="#">유료상품 가입정보</a></li>
+              </ul>
+            </li>
+            <li><h4>이용내역</h4>
+              <ul class="sub_menu">
+                <li><a href="#">카드 이용/취소/<br>매출전표 내역</a></li>
+                <li><a href="#">개인사업자용 <br>카드 이용내역</a></li>
+                <li><a href="#">단기카드대출/<br>장기카드대출내역</a></li>
+                <li><a href="#">정기결제 이용내역</a></li>
+                <li><a href="#">장기렌터카/오토리스 계약내역</a></li>
+                <li><a href="#">할부금융 이용내역</a></li>
+                <li><a href="#">소득공제 내역</a></li>
+                <li><a href="#">eward 이용내역</a></li>
+              </ul>
+            </li>
+            <li><h4>이용한도</h4>
+              <ul class="sub_menu">
+                <li><a href="#">카드 이용한도</a></li>
+                <li><a href="#">목적별 추가한도</a></li>
+                <li><a href="#">경비한도</a></li>
+                <li><a href="#">의약품결제 전용한도</a></li>
+                <li><a href="#">아큐브 결제 전용한도</a></li>
+              </ul>
+            </li>
+            <li><h4>카드대금 결제</h4>
+              <ul class="sub_menu">
+                <li><a href="#">즉시결제</a></li>
+                <li><a href="#">가상계좌</a></li>
+                <li><a href="#">입금내역</a></li>
+                <li><a href="#">국내 일시불 분할납부</a></li>
+                <li><a href="#">해외 일시불 분할납부</a></li>
+                <li><a href="#">단기/장기카드대출로 결제</a></li>
+                <li><a href="#">포인트연계할부서비스<br>(세이브)로 결제</a></li>
+              </ul>
+            </li>
+            <li><h4>개인정보</h4>
+              <ul class="sub_menu">
+                <li><a href="#">내 정보 한눈에 보기</a></li>
+                <li><a href="#">개인정보</a></li>
+                <li><a href="#">결제일</a></li>
+                <li><a href="#">결제계좌</a></li>
+                <li><a href="#">카드/금융 이자율</a></li>
+                <li><a href="#">마케팅 수신 동의</a></li>
+                <li><a href="#">카카오톡 알림톡 수신 동의</a></li>
+                <li><a href="#">앱 설치 정보 수집/이용 동의</a></li>
+                <li><a href="#">PIN번호</a></li>
+                <li><a href="#">홈페이지 비밀번호</a></li>
+                <li><a href="#">홈페이지 회원 탈퇴</a></li>
+              </ul>
+            </li>
+            <li><h4>카드정보</h4>
+              <ul class="sub_menu">
+                <li><a href="#">카드발급상황</a></li>
+                <li><a href="#">카드사용등록</a></li>
+                <li><a href="#">보유카드</a></li>
+                <li><a href="#">카드비밀번호</a></li>
+                <li><a href="#">분실신고(삼성카드/타사카드)</a></li>
+                <li><a href="#">분실해제</a></li>
+                <li><a href="#">보이스피싱(금융사기) 신고</a></li>
+                <li><a href="#">카드재발급</a></li>
+                <li><a href="#">장기 미이용카드 유지</a></li>
+                <li><a href="#">사고접수</a></li>
+              </ul>
+            </li>
+            <li><h4>서류간편발급</h4>
+              <ul class="sub_menu">
+                <li><a href="#">서류발급</a></li>
+                <li><a href="#">서식 자료실</a></li>
+              </ul>
+            </li>
+          </ul><!--My Samsung-->
+      </li>
+      <li class="item">
+        <div class="item_name"><a href="#">카드</a></div>
+          <ul class="menu_inner clearFix">
+            <li><h4>카드안내</h4>
+              <ul class="sub_menu">
+                <li><a href="#">카드 한눈에 보기</a></li>
+              </ul>
+            </li>
+            <li><h4>카드신청</h4>
+              <ul class="sub_menu">
+                <li><a href="#">삼성 ID카드</a></li>
+                <li><a href="#">빠른 발급카드</a></li>
+                <li><a href="#">디지털신청전용카드</a></li>
+                <li><a href="#">tabtab 카드</a></li>
+                <li><a href="#">프리미엄카드</a></li>
+                <li><a href="#">아메리칸엑스프레스카드</a></li>
+                <li><a href="#">제휴카드</a></li>
+                <li><a href="#">개인사업자카드</a></li>
+                <li><a href="#">후불하이패스카드</a></li>
+                <li><a href="#">플러스카드</a></li>
+                <li><a href="#">SFC카드</a></li>
+                <li><a href="#">체크카드</a></li>
+                <li><a href="#">가족카드</a></li>
+                <li><a href="#">청소년 가족카드</a></li>
+                <li><a href="#">법인개별카드</a></li>
+              </ul>
+            </li>
+            <li><h4>기프트카드</h4>
+              <ul class="sub_menu">
+                <li><a href="#">안내/구매</a></li>
+                <li><a href="#">충전</a></li>
+                <li><a href="#">전액환불</a></li>
+                <li><a href="#">부가서비스</a></li>
+                <li><a href="#">구매 및 배송조회</a></li>
+              </ul>
+            </li>
+          </ul> <!--카드-->
+      </li>
+      <li class="item">
+        <div class="item_name "><a href="#">혜택</a></div>
+          <ul class="menu_inner clearFix">
+            <li><h4>이벤트</h4>
+              <ul class="sub_menu">
+                <li><a href="#">GAME ZONE</a></li>
+                <li><a href="#">이벤트</a></li>
+              </ul>
+            </li>
+            <li><h4>카드 혜택</h4>
+              <ul class="sub_menu">
+                <li><a href="#">나의 맟춤 혜택</a></li>
+                <li><a href="#">나의 카드 혜택</a></li>
+                <li><a href="#">AI추천</a></li>
+                <li><a href="#">공통서비스 S</a></li>
+                <li><a href="#">혜택리포트</a></li>
+                <li><a href="#">친구에게 카드추천</a></li>
+              </ul>
+            </li>
+            <li><h4>LINK</h4>
+              <ul class="sub_menu">
+                <li><a href="#">나의 LINK 혜택</a></li>
+                <li><a href="#">월별 LINK 혜택 이용내역</a></li>
+              </ul>
+            </li>
+            <li><h4>포인트</h4>
+              <ul class="sub_menu">
+                <li><a href="#">포인트 조회/사용</a></li>
+                <li><a href="#">선지급포인트 서비스</a></li>
+                <li><a href="#">S선지급포인트 서비스</a></li>
+                <li><a href="#">포인트연계할부 서비스<br>(세이브서비스)</a></li>
+                <li><a href="#">삼성전자멤버십 서비스</a></li>              </ul>
+            </li>
+            <li><h4>정부지원 사업</h4>
+              <ul class="sub_menu">
+                <li><a href="#">정부지원금</a></li>
+                <li><a href="#">상생지원금</a></li>
+                <li><a href="#">국가바우처</a></li>
+                <li><a href="#">유가보조금</a></li>
+              </ul>
+            </li>
+            <li><h4>혜택 가맹점</h4>
+              <ul class="sub_menu">
+                <li><a href="#">혜택 모아보기</a></li>
+                <li><a href="#">무이자할부 가맹점</a></li>
+                <li><a href="#">보너스클럽</a></li>
+              </ul>
+            </li>
+            <li><h4>라운지</h4>
+              <ul class="sub_menu">
+                <li><a href="#">프리미엄 리워즈</a></li>
+                <li><a href="#">프리미엄카드</a></li>
+                <li><a href="#">트레이더스</a></li>
+                <li><a href="#">국민행복카드</a></li>
+                <li><a href="#">SFC</a></li>
+                <li><a href="#">BIZ</a></li>
+              </ul>
+            </li>
+          </ul> <!--혜택-->
+        </li>
+      <li class="item">
+        <div class="item_name"><a href="#">금융</a></div>
+        <ul class="menu_inner clearFix">
+          <li><h4>대출</h4>
+            <ul class="sub_menu">
+              <li><a href="#">단기카드대출</a></li>
+              <li><a href="#">장기카드대출</a></li>
+              <li><a href="#">삼성카드 신용대출</a></li>
+              <li><a href="#">일부결제금액이월약정(리볼빙)</a></li>
+            </ul>
+          </li>
+          <li><h4>할부금융</h4>
+            <ul class="sub_menu">
+              <li><a href="#">전자/내구재 할부금용</a></li>
+            </ul>
+          </li>
+        </ul> <!--금융-->
+      </li>
+      <li class="item">
+        <div class="item_name"><a href="#">쇼핑</a></div>
+        <ul class="menu_inner clearFix">
+          <li><h4>쇼핑메인</h4></li>
+          <li><h4>특가 상품</h4>
+            <ul class="sub_menu">
+              <li><a href="#">일일특가</a></li>
+              <li><a href="#">베스트50</a></li>
+              <li><a href="#">핫딜</a></li>
+              </ul>
+          </li>
+          <li><h4>전문관</h4>
+            <ul class="sub_menu">
+              <li><a href="#">삼쇼마켓</a></li>
+              <li><a href="#">뷰티</a></li>
+              <li><a href="#">인테리어</a></li>
+              <li><a href="#">명품</a></li>
+              <li><a href="#">육아</a></li>
+              <li><a href="#">삼성전자</a></li>
+            </ul>
+          </li>
+        </ul><!--쇼핑-->
+      </li>
+      <li class="item">
+        <div class="item_name"><a href="#">라이프</a></div>
+        <ul class="menu_inner clearFix">
+          <!-- <li><h2>상섬카드에서 라이프를 즐겨보자</h2></li> -->
+          <li><h4><a href="#">삼성카드 스토리</a></h4></li>
+          <li><h4><a href="#">랜탈</a></h4></li>
+          <li><h4><a href="#">쇼핑</a></h4></li>
+          <li><h4><a href="#">국내제휴몰</a></h4></li>
+          <li><h4><a href="#">쿠폰박스</a></h4></li>
+          <li><h4><a href="#">여행</a></h4></li>
+          <li><h4><a href="#">컬처멤버스클럽</a></h4></li>
+          <li><h4><a href="#">웨딩</a></h4></li>
+          <li><h4><a href="#">열린나눔</a></h4></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="utill_bar">
+      <p><a href="#">개인사업자</a></p>
+      <p><a href="#">법인</a></p>
+      <p><a href="#">가맹점</a></p>
+      <p><a href="#">금융소비자보호</a></p>
+      <p><a href="#">상품공시실</a></p>
+    </div>
+  </header> <!--header-->
+
+<!--SECTION-->
+<div class="content">
+<section class="section__left">
+	<section class="slide-banner scroll-spy">
+	<div class="inner back-to-position to-up">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="./images/home_banner/home_banner_1.png" alt="link surprise" class="img__bigsize">
+					<img src="./images/home_banner/home_banner_2.png" alt="삼성카드 my business 카드" class="img__smallsize">
+					<img src="./images/home_banner/home_banner_3.png" alt="samsung new card" class="img__smallsize">
+				</div>
+				<div class="swiper-slide">
+					<img src="./images/home_banner/home_banner_4.png" alt="1,000원 쓰면 최대 2마일리지 적립" class="img__bigger">
+				</div>
+				<div class="swiper-slide">
+					<img src="./images/home_banner/home_banner_5.png" alt="주유 아직도 내돈 내산" class="img__smallsize">
+					<img src="./images/home_banner/home_banner_6.png" alt="출시기념 삼성금융 통합 앱 모니모가 5,000원 상품권 드려요" class="img__smallsize">
+					<img src="./images/home_banner/home_banner_7.png" alt="신세계 ssg.com benefit 카드" class="img__bigsize">
+				</div>
+				<div class="swiper-slide">
+					<img src="./images/home_banner/home_banner_8.png" alt="진짜를 만나다 american express" class="img__bigsize">
+					<img src="./images/home_banner/home_banner_9.png" alt="삼성 드라이브 카드" class="img__smallsize">
+					<img src="./images/home_banner/home_banner_10.png" alt="홈페이지는 새롭고 카드는 놀랍다" class="img__smallsize">
+				</div>
+			</div>
+		</div>
+		
+		<div class="swiper-btn">
+			<div class="swiper-prev">
+				<div class="material-icons">
+				<img src="./images/common/ico_left_arrow.png" alt="left arrow Btn">
+				</div>
+			</div>
+			<div class="swiper-next">
+				<div class="material-icons">
+				<img src="./images/common/ico_right_arrow.png" alt="right arrow Btn">
+				</div>
+			</div>
+    </div>
+	</div>
+</section>
+
+<!--RECOMMENDEDCARD-->
+<section class="recommendedcard the_top scroll-spy">
+	<div class="inner">
+  <div class="rec_txt  back-to-position to-right">
+    <p class="rec_title">SAMSUNG Recommended</p>
+    <p class="rec_sub">
+      나의 소비 패턴과 라이프스타일에 꼭 맞는<br>
+      실용적인 삼성카드
+    </p>
+    <p class="rec_more">
+      <a href="javascript:void(0)">전체보기 ></a>
+    </p>
+    <div class="tags_content">
+    	<ul>
+    		<li><a href="javascript:void(0)"># 삼성카드가추천</a></li>
+    		<li><a href="javascript:void(0)"># 발급은빠르게</a></li>
+    		<li><a href="javascript:void(0)"># 혜택은크게!</a></li>
+    		<li><a href="javascript:void(0)"># 포인트가쑥쑥</a></li>
+    	</ul>
+    </div>
+  </div>
+  <div class="rec_box back-to-position to-up">
+    <ul class="clearFix">
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend1.gif" alt=" 삼성 iD SIMPLE 카드">
+          <p class="rec_box_txt">
+            삼성 iD SIMPLE 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend2.gif" alt="삼성 iD ON 카드">
+          <p class="rec_box_txt">
+            삼성 iD ON 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend3.png" alt="삼성 taptap O 카드">
+          <p class="rec_box_txt">
+            삼성 taptap O
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend4.png" alt="MILEAGE PLATINUM 카드">
+          <p class="rec_box_txt">
+            & MILEAGE<br>
+            PLATINUM
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend5.gif" alt="삼성 iD MOVE 카드">
+          <p class="rec_box_txt">
+            삼성 iD MOVE 카드
+          </p>
+        </a> 
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend6.gif" alt="삼성 iD ENERGY 카드">
+          <p class="rec_box_txt">
+            삼성 iD ENERGY 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend7.gif" alt="삼성 iD AUTO 카드">
+          <p class="rec_box_txt">
+            삼성 iD AUTO 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend8.png" alt="삼성 iD 달달할인 카드">
+          <p class="rec_box_txt">
+            삼성 iD 달달할인 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend9.png" alt="신세계 더 마일리지 삼성카드">
+          <p class="rec_box_txt">
+            신세계 더 마일리지<br>
+            삼성카드(스카이패스)
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/recommend10.png" alt="">
+          <p class="rec_box_txt">
+            모니모니카드
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!--NEW CARD-->
+<section class="recommendedcard the_bottom scroll-spy">
+ <div class="inner">
+  <div class="rec_txt  back-to-position to-right">
+    <p class="rec_title">SAMSUNG New Card</p>
+    <p class="rec_sub">
+      따끈따근 신상이라 <br>
+      더더 기대되는 카드!
+    </p>
+    <p class="rec_more">
+      <a href="javascript:void(0)">전체보기 ></a>
+    </p>
+    <div class="tags_content">
+    	<ul>
+    		<li><a href="javascript:void(0)"># 모니모</a></li>
+    		<li><a href="javascript:void(0)"># 삼성아이디</a></li>
+    		<li><a href="javascript:void(0)"># 혜택은크게!</a></li>
+    		<li><a href="javascript:void(0)"># 주유</a></li>
+    	</ul>
+    </div>
+  </div>
+  <div class="rec_box back-to-position to-up">
+    <ul class="clearFix">
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_1.png" alt=" 삼성 iD SIMPLE 카드">
+          <p class="rec_box_txt">
+            모니모카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_2.gif" alt="삼성 iD ON 카드">
+          <p class="rec_box_txt">
+            삼성 iD ON 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_3.gif" alt="삼성 taptap O 카드">
+          <p class="rec_box_txt">
+            삼성 iD ALL 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_4.gif" alt="MILEAGE PLATINUM 카드">
+          <p class="rec_box_txt">
+            삼성 iD SIMPLE 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_5.gif" alt="삼성 iD MOVE 카드">
+          <p class="rec_box_txt">
+            삼성 iD AUTO 카드
+          </p>
+        </a> 
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_6.png" alt="삼성 iD ENERGY 카드">
+          <p class="rec_box_txt">
+            CJ 삼성 iD 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_7.gif" alt="삼성 iD AUTO 카드">
+          <p class="rec_box_txt">
+            삼성 iD CARE 카드
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/card/newcard_8.gif" alt="삼성 iD 달달할인 카드">
+          <p class="rec_box_txt">
+            삼성 iD MIVE 카드
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<!--BENEFIT-->
+<section class="benefit scroll-spy">
+  <div class="bene_wrap back-to-position to-up">
+    <p class="titleBtn blue"><a href="#">맞춤혜택 더보기</a></p>
+    <ul class="bene_box my_box clearFix">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+    </ul>
+  </div>
+
+  <div class="shopping_wrap back-to-position to-up">
+    <p class="titleBtn pink"><a href="#">삼성카드쇼핑 더보기</a></p>
+    <ul class="bene_box shoppin_box clearFix">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+    </ul>
+    </div>
+</section>
+
+<!--LIFE-->
+  <section class="life scroll-spy">
+    <h3 class="art_tit back-to-position to-up">삼성카드 <span>LIFE</span>
+      <a href="#">전체보기 ></a>
+    </h3>
+    <div class="art_container back-to-position to-up">
+      <ul class="cont_box clearFix">
+        <li>
+          <a href="#">
+            <p class="cont_text">삼성카드 Story</p>
+            <p class="cont_text_sub">
+              공연에 레저·다이닝까지-
+              <br>
+              특별한 순간을 가볍게!
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p class="cont_text">아지냥이</p>
+            <p class="cont_text_sub">
+              강아지, 고양이와 함께 살고
+              <br>
+              있다면 일단 클릭!
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p class="cont_text">렌탈</p>
+            <p class="cont_text_sub">
+              다양하게 비교하고
+              <br>
+              똑똑하게 결정하세요
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p class="cont_text">인생樂서</p>
+            <p class="cont_text_sub">
+              내 이야기로
+              <br>
+              만나는 세상
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div> 
+  </section>
+</section>
+
+<!--LOGIN-->
+	<section class="right_side scroll-spy">
+	<div class="login">
+  <div class="inner">
+    <div class="login_box">
+      <ul class="login_btn clearFix back-to-position to-left">
+        <li class="bg">앱카드</li>
+        <li>로그인</li>
+      </ul>
+      <div class="appCard back-to-position to-left">
+        <div class="pass">
+          <p class="pass_txt">
+            삼성카드앱의<br>
+            결제 비밀번호로 로그인 해주세요.</p>
+          <ul class="num clearFix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+          </ul>
+					<div class="id_submit">로그인</div>
+          <p class="app_info"><a href="#">삼성카드 앱 안내</a></p>
+        </div> 
+      </div>
+    </div>
+		</div>
+		</div>
+
+    <div class="customer_ser back-to-position to-left">
+      <ul class="customer_box clearFix"> 
+        <li>
+          <a href="#">
+            <img src="./images/common/ico_customer1.png" alt="고객지원">
+            <p>고객지원</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/common/ico_customer3.png" alt="상담·문의">
+            <p>상담·문의</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/common/ico_customer2.png" alt="도난·분실">
+            <p>도난·분실</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="finance back-to-position to-left">
+      <h4 class="fi_tit"><a href="#">금융</a></h4>
+      <ul>
+        <li>
+          <a href="#">단기카드 대출<span>(현금서비스)</span></a>
+        </li>
+        <li>
+          <a href="#">장기카드 대출<span>(카드콜)</span></a>
+        </li>
+        <li>
+          <a href="#">삼성카드 신용대출</a>
+        </li>
+        <li>
+          <a href="#">일부결제금액 이월약정<span>(리볼빙)</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="notice back-to-position to-left">
+      <h4><a href="#">뉴스·공지사항</a></h4>
+      <ul>
+        <li>
+          <p><a href="#">부가치세 신고용 카드 이용내역서 조회 및 ...</a></p>
+        </li>
+        <li>
+          <p><a href="#">단기카드대출(현슴서비스) 및 일부결제 ...</a></p>
+        </li>
+        <li>
+          <p><a href="#">차 살 때 더 좋은 혜택(신차/중고차)살때 ...</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="app_box back-to-position to-up">
+      <div class="app_con1"></div>
+   </div>
+</section>
+</div>
+
+<!--FOOTER-->
+<footer>
+  <div class="footer_wrap">
+    <div class="f_num">
+      <p class="f_tit">
+        <span>ARS(유료)</span>
+        대표전화 1588-8700 카드신청 1688-1133 분실신고·한도승인 (국내) 1588-8900 (해외) 82-2-2000-8100, 800-1588-8700
+      </p>
+    </div>
+    <div class="sns">
+      <ul class="clearFix">
+        <li><a href="#">faceboox</a></li>
+        <li><a href="#">insta</a></li>
+        <li><a href="#">blog</a></li>
+        <li><a href="#">kakao</a></li>
+        <li><a href="#">yout</a></li>
+      </ul>
+    </div>  
+    <div class="f_menu">
+      <ul class="f_int clearFix">
+        <li><b><a href="#">회사소개</a></b></li>
+        <li><a href="#">ENGLISH</a></li>
+        <li><a href="#">전자민원접수</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">고객권리 안내</a></li>
+        <li><a href="#">금융사기피해예방</a></li>
+      </ul>
+      <ul class="f_per clearFix">
+        <li><b><a href="#">개인정보 처리방침</a></b></li>
+        <li><b><a href="#">위치기반서비스 이용약관</a></b></li>
+        <li>
+          통신중개판매상품 이메일
+          <span><a href="#"><img src="./images/footer/footer_q_icon.png" alt="물음표아이콘"></a></span>
+          lifecare.scard@samsung.com
+        </li>
+      </ul>
+    </div>
+    <div class="f_site">
+      <select name="familysite" id="f_site">
+        <option value="family">패밀리사이트</option>
+        <option value="shop">쇼핑</option>
+        <option value="wedding">웨딩</option>
+        <option value="insu">보험</option>
+        <option value="dogcat">아지냥이</option>
+        <option value="open">열린나눔</option>
+        <option value="Lab">Young Lab</option>
+        <option value="point">U포인트</option>
+      </select>
+    </div>
+    <div class="f_company">
+      <ul class="clearFix">
+        <li>대표이사 사장 김대환</li>
+        <li>서울 중구 세종대로 67(04514)</li>
+        <li>사업자등록번호 202-81-45602</li>
+        <li>통신판매업 신고번호 제 2009-서울중구-1449호환</li>
+      </ul>
+    </div>
+    <p class="copyright">
+      &copy; <span class="this-year"></span>
+      hyemi. All Rights Reserved.
+    </p>
+    <div class="f_awrads">
+      <div class="f_Awarp">
+        <p class="f_prev">prev</p>
+        <p class="f_next">next</p>
+        <ul class="f_panel clearFix">
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars1.jpg" alt="수상내역">
+              <p>한국서비스품질지수<br>9년 연속 1위</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars2.jpg" alt="수상내역">
+              <p>한국산업고객만족도<br>6년 연속 1위</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars3.jpg" alt="수상내역">
+              <p>국가고객만족도<br>8년 연속 1위</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars4.jpg" alt="수상내역">
+              <p>2021 정보 접근성<br>품질인증</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars5.jpg" alt="수상내역">
+              <p>한국서비스대상<br>명예의 전당</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars6.jpg" alt="수상내역">
+              <p>고객만족경영대상<br>명예의 전당</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars7.jpg" alt="수상내역">
+              <p>카드결제산업<br>데이터보안표준 인증</p>
+            </a>
+          </li>
+          <li class="clearFix">
+            <a href="#">
+              <img src="./images/footer/f_awars8.png" alt="수상내역">
+              <p>정보보호/개인정보<br>관리체계 인증</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="to-top">
+  <div class="material-icons">arrow_upward</div>
+</div>
+
+
+</body>
+</html>
